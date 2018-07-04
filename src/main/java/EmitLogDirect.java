@@ -29,14 +29,16 @@ public class EmitLogDirect {
     }
 
     private static String getSeverity(String[] strings) {
-        if (strings.length < 1)
+        if (strings.length < 1){
             return "info";
+        }
         return strings[0];
     }
 
     private static String getMessage(String[] strings) {
-        if (strings.length < 2)
+        if (strings.length < 2){
             return "Hello World!";
+        }
         return String.join(" ",Arrays.copyOfRange(strings, 1, strings.length));
     }
 

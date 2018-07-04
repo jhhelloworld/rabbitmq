@@ -12,7 +12,10 @@ public class ReceiveLogs {
     Channel channel = connection.createChannel();
 
     channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
+
+    //随机队列名称
     String queueName = channel.queueDeclare().getQueue();
+    //绑定消息交换机和队列
     channel.queueBind(queueName, EXCHANGE_NAME, "");
 
     System.out.println(" [*] Waiting for messages. To exit press CTRL+C");

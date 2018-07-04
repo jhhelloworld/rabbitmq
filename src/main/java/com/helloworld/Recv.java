@@ -1,3 +1,5 @@
+package com.helloworld;
+
 import com.rabbitmq.client.*;
 
 import java.io.IOException;

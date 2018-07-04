@@ -28,8 +28,10 @@ public class NewTask {
     }
 
     private static String getMessage(String[] strings) {
-        if (strings.length < 1)
+        if (strings.length < 1){
             return "Hello World!";
+        }
+
         return String.join(" ", strings);
     }
 

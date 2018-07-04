@@ -16,6 +16,7 @@ public class EmitLog {
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
 
+            //【消息交换机】的类型：【Direct】直接，【Topic】主题，【Headers】标题和【Fanout】扇出。
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
 
             String message = getMessage(argv);
@@ -26,8 +27,9 @@ public class EmitLog {
     }
 
     private static String getMessage(String[] strings) {
-        if (strings.length < 1)
+        if (strings.length < 1){
             return "info: Hello World!";
+        }
         return String.join(" ", strings);
     }
 
