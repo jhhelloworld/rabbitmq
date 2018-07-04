@@ -1,3 +1,5 @@
+package com.publishSubscribe;
+
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
