@@ -1,3 +1,5 @@
+package com.topics;
+
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;

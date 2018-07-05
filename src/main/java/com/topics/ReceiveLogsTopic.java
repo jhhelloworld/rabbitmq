@@ -1,3 +1,5 @@
+package com.topics;
+
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
@@ -16,7 +18,7 @@ public class ReceiveLogsTopic {
     String queueName = channel.queueDeclare().getQueue();
 
     if (argv.length < 1) {
-      System.err.println("Usage: ReceiveLogsTopic [binding_key]...");
+      System.err.println("Usage: com.topics.ReceiveLogsTopic [binding_key]...");
       System.exit(1);
     }
 

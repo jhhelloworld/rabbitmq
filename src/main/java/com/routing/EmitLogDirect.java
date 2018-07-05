@@ -1,3 +1,5 @@
+package com.routing;
+
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
@@ -7,6 +9,9 @@ import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ *把消息发送到direct类型的交换机，把日志错误的严重程度作为routing key。接收程序可以选择它希望接收到的错误程度的日志
+ */
 public class EmitLogDirect {
 
     private static final String EXCHANGE_NAME = "direct_logs";
@@ -18,6 +23,7 @@ public class EmitLogDirect {
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
 
+            //创建交换机
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
 
             String severity = getSeverity(argv);
